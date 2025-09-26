@@ -1,25 +1,51 @@
-import type { Metadata } from 'next'
-import { Playfair_Display, David_Libre } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
+import type { Metadata } from 'next'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import { Suspense } from 'react'
 import './globals.css'
 
 // Khởi tạo font Inter cho chữ thường
-const davidLibre = David_Libre({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-david-libre', // Tạo biến CSS
-  weight: ['400', '700']
+  variable: '--font-inter', // Tạo biến CSS
+  weight: ['400', '500', '600', '700']
 })
-// Khởi tạo font Playfair Display cho tiêu đề và nội dung truyện
-const playfair = Playfair_Display({
+// Khởi tạo font Space Grotesk cho tiêu đề
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-playfair', // Tạo biến CSS
-  weight: ['400', '700']
+  variable: '--font-space-grotesk', // Tạo biến CSS
+  weight: ['400', '500', '600', '700']
 })
+
 export const metadata: Metadata = {
-  title: 'Nỗi đau giữa hòa bình',
+  title: 'SynapseAI - Blog về AI & Tự động hóa',
   description:
-    'Câu chuyện về tình yêu tuyệt đẹp giữa những con người thời chiến'
+    'SynapseAI là blog chia sẻ kiến thức, xu hướng và ứng dụng thực tế của Trí tuệ Nhân tạo (AI) và Tự động hóa dành cho lập trình viên và doanh nghiệp Việt Nam.',
+  keywords: [
+    'AI',
+    'Artificial Intelligence',
+    'Automation',
+    'Tự động hóa',
+    'Next.js',
+    'React',
+    'Python',
+    'FastAPI',
+    'Chatbot',
+    'SaaS',
+    'SynapseAI'
+  ],
+  authors: [{ name: 'Nguyen Doan Ngoc Suong', url: 'https://getsynapse.tech' }],
+  creator: 'SynapseAI',
+  publisher: 'SynapseAI',
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: 'https://getsynapse.tech',
+    siteName: 'SynapseAI',
+    title: 'SynapseAI - Blog về AI & Tự động hóa',
+    description:
+      'Cập nhật kiến thức và xu hướng mới nhất về AI, Automation, và cách ứng dụng vào sản phẩm thực tế.'
+  }
 }
 
 export default function RootLayout({
@@ -30,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${davidLibre.variable} antialiased`}>
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
         <Suspense fallback={null}>
           <ThemeProvider
             attribute='class'

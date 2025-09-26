@@ -52,17 +52,40 @@ export async function getAllPosts(): Promise<Post[]> {
  * @returns {Promise<Post | null>} Dữ liệu bài viết hoặc null nếu không tìm thấy
  */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
+  // --- BẮT ĐẦU DEBUG ---
+  console.log(`[DEBUG] Bắt đầu tìm bài viết với slug: "${slug}"`)
+  const startTime = Date.now()
+  // --- KẾT THÚC DEBUG ---
   try {
     const postsCol = collection(db, 'posts')
     const q = query(postsCol, where('slug', '==', slug), limit(1))
     const postSnapshot = await getDocs(q)
 
     if (postSnapshot.empty) {
+      // --- BẮT ĐẦU DEBUG ---
+      const endTime = Date.now()
+      console.log(
+        `[DEBUG] Không tìm thấy bài viết. Thời gian tìm kiếm: ${
+          endTime - startTime
+        }ms`
+      )
+      // --- KẾT THÚC DEBUG ---
       return null
     }
 
     const postDoc = postSnapshot.docs[0]
-    return { id: postDoc.id, ...postDoc.data() } as Post
+    const postData = { id: postDoc.id, ...postDoc.data() } as Post
+
+    // --- BẮT ĐẦU DEBUG ---
+    const endTime = Date.now()
+    console.log(
+      `[DEBUG] Đã tìm thấy bài viết! ID: ${postData.id}. Thời gian tìm kiếm: ${
+        endTime - startTime
+      }ms`
+    )
+    // --- KẾT THÚC DEBUG ---
+
+    return postData
   } catch (error) {
     console.error(`Error fetching post with slug ${slug}:`, error)
     return null
