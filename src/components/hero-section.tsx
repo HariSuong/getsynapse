@@ -1,7 +1,7 @@
 export function HeroSection() {
   return (
-    <section className='relative w-full flex justify-center py-24 md:py-32 lg:py-40'>
-      <div className='absolute inset-0 bg-gradient-to-br from-blue-950/50 via-background to-background'>
+    <section className='relative top-0 w-full flex justify-center'>
+      {/* <div className='absolute inset-0 bg-gradient-to-br from-blue-950/50 via-background to-background'>
         <div className='absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]' />
       </div>
 
@@ -25,7 +25,13 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <img
+        src='/imgs/banner/1.png'
+        alt='Hero Image'
+        className='w-full h-auto'
+      />
     </section>
   )
 }

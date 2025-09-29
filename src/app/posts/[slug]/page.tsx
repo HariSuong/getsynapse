@@ -74,7 +74,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
     <div className='flex min-h-screen flex-col bg-background'>
       <Header />
       <main className='flex-1'>
-        <article className='container relative mx-auto max-w-3xl py-12 px-4'>
+        <article className='container relative mx-auto md:max-w-4xl w-full py-12 px-4'>
           <header className='mb-8 text-center'>
             {/* <div className='mb-4 flex flex-wrap justify-center gap-2'>
               {post.tags.map(tag => (
@@ -103,7 +103,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
           </div>
 
           {post.desc && (
-            <blockquote className='mt-8 border-l-4 border-primary pl-6 italic text-muted-foreground'>
+            <blockquote className='mt-8 border-l-4 border-primary pl-6 mb-16 italic text-muted-foreground'>
               <p className='text-xl leading-relaxed'>{post.desc}</p>
             </blockquote>
           )}

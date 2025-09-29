@@ -10,13 +10,11 @@ export function Header() {
 
   return (
     // <header className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-    <header className='flex justify-between items-center flex-1 flex-col sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-      <div className='container flex h-16 items-center justify-center px-4'>
+    <header className='flex justify-between items-center flex-1 flex-col sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/50'>
+      <div className='container flex h-20 items-center justify-center px-4'>
         <div className='flex items-center space-x-2'>
           <Link href='/' className='flex items-center space-x-2'>
-            <span className='text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
-              SynapseAI
-            </span>
+            <img src='/logo.png' alt='Logo' className='h-auto w-40' />
           </Link>
         </div>
 

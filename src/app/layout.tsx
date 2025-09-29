@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: 'SynapseAI - Blog về AI & Tự động hóa',
   description:
     'SynapseAI là blog chia sẻ kiến thức, xu hướng và ứng dụng thực tế của Trí tuệ Nhân tạo (AI) và Tự động hóa dành cho lập trình viên và doanh nghiệp Việt Nam.',
+  icons: {
+    icon: '/fav.png' // Đường dẫn tới file trong thư mục /public
+  },
   keywords: [
     'AI',
     'Artificial Intelligence',
