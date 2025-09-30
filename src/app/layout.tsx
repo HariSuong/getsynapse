@@ -1,4 +1,6 @@
 import { ThemeProvider } from '@/components/theme-provider'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { Suspense } from 'react'
@@ -70,6 +72,8 @@ export default function RootLayout({
           </ThemeProvider>
         </Suspense>
       </body>
+
+      <GoogleAnalytics gaId='G-ES23SL8JK8' />
     </html>
   )
 }
