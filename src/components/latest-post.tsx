@@ -6,10 +6,9 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { getAllPosts } from '@/lib/posts' // 1. Import hàm lấy tất cả bài viết từ lib/posts.ts
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/posts' // 1. Import hàm lấy tất cả bài viết từ lib/posts.ts
 
 export async function LatestPosts() {
   // 3. Gọi hàm để lấy TẤT CẢ bài viết từ Firebase
