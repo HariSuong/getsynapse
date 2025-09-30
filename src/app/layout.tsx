@@ -71,8 +71,8 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </Suspense>
+        <GoogleAnalytics gaId='G-E5Z3SLRJX8' />
       </body>
-      <GoogleAnalytics gaId='G-E5Z3SLRJX8' />
     </html>
   )
 }
